@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { StoreProvider } from './_providers/StoreProvider';
 import { Lato } from 'next/font/google';
 import './globals.css';
 import './_styles/ui/index.scss';
+import { TanstackProvider } from './_providers/TanstackProvider';
 
 const lato = Lato({
   variable: '--font-family',
@@ -21,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lato.variable}`}>{children}</body>
+      <body className={`${lato.variable}`}>
+        <StoreProvider>
+          <TanstackProvider>{children}</TanstackProvider>
+        </StoreProvider>
+      </body>
     </html>
   );
 }
