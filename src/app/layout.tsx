@@ -27,8 +27,10 @@ export default function RootLayout({
       <body className={`${lato.variable}`}>
         <StoreProvider>
           <TanstackProvider>
-            <Header />
-            {children}
+            <div className="wrapper">
+              <Header />
+              <main className="content"> {children}</main>
+            </div>
           </TanstackProvider>
         </StoreProvider>
       </body>

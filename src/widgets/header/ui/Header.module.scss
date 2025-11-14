@@ -1,0 +1,18 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+a.link {
+  display: block;
+  width: max-content;
+  padding: 8px 16px;
+  color: var(--color-light-100);
+  span {
+    width: 28px;
+    height: 28px;
+    background: center/cover no-repeat url('/fill-profile.svg');
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
