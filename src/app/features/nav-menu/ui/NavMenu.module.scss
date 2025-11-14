@@ -1,0 +1,14 @@
+.menu {
+  border: 2px solid var(--color-dark-300);
+  border-radius: 12px;
+  width: max-content;
+  padding: 10px 40px 10px 10px;
+}
+.list {
+  margin: 0 -7.5px;
+  display: flex;
+  align-items: center;
+}
+.item {
+  margin: 0 7.5px;
+}
