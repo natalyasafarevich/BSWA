@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import "../_styles/ui/index.scss";
+import "./_styles/ui/index.scss";
 
 const lato = Lato({
   variable: "--font-family",
