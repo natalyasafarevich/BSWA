@@ -4,11 +4,11 @@ import { Logo } from './Logo';
 
 const meta = {
   title: 'Example/Logo',
+  tags: ['autodocs'],
   component: Logo,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
 } satisfies Meta<typeof Logo>;
 
 export default meta;

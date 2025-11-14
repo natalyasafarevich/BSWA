@@ -1,0 +1,16 @@
+.link {
+  all: unset;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 150%;
+  color: var(--color-light-500);
+  padding: 8px 16px;
+  border-radius: 8px;
+  &_active,
+  &:hover {
+    cursor: pointer;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-light-100);
+    background: var(--color-dark-500);
+  }
+}
