@@ -12,7 +12,9 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.10.1",
@@ -24,14 +26,20 @@
     "sass": "^1.94.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "4.1.2",
+    "@storybook/addon-docs": "10.0.7",
+    "@storybook/addon-onboarding": "10.0.7",
+    "@storybook/nextjs": "10.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
+    "eslint-plugin-storybook": "10.0.7",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
+    "storybook": "10.0.7",
     "typescript": "^5"
   }
 }
