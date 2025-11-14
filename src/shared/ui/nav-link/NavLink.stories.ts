@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import { NavLink } from './NavLink';
 
 const meta = {
-  title: 'Example/Nav Link',
+  title: 'Components/Nav Link',
   component: NavLink,
   tags: ['autodocs'],
   parameters: {

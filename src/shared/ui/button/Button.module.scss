@@ -1,0 +1,26 @@
+.button {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: var(--font-size-m);
+  color: var(--color-light-300);
+  text-align: center;
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+.primary {
+  background: var(--color-danger-100);
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: var(--font-weight-bold);
+}
+.fullWidth {
+  width: 100%;
+  max-width: 100%;
+}
+.text {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-regular);
+}

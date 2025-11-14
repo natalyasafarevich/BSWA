@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Logo } from './Logo';
 
 const meta = {
-  title: 'Example/Logo',
+  title: 'Components/Logo',
   tags: ['autodocs'],
   component: Logo,
   parameters: {
