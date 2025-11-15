@@ -17,3 +17,14 @@ a.link {
     vertical-align: middle;
   }
 }
+.box {
+  display: flex;
+  align-items: center;
+}
+a.search {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: center/cover no-repeat url('/search-icon.svg');
+  margin-right: 11px;
+}
