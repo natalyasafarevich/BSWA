@@ -4,6 +4,7 @@ import { Lato } from 'next/font/google';
 import './globals.css';
 import './_styles/ui/index.scss';
 import { TanstackProvider } from './_providers/TanstackProvider';
+import { Header } from '@/widgets/header';
 
 const lato = Lato({
   variable: '--font-family',
@@ -25,7 +26,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lato.variable}`}>
         <StoreProvider>
-          <TanstackProvider>{children}</TanstackProvider>
+          <TanstackProvider>
+            <div className="wrapper">
+              <Header />
+              <main className="content"> {children}</main>
+            </div>
+          </TanstackProvider>
         </StoreProvider>
       </body>
     </html>

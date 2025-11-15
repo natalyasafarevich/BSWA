@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 
-import { Logo } from './Logo';
+import { NavMenu } from './NavMenu';
 
 const meta = {
-  title: 'Components/Logo',
+  title: 'Widgets/Nav Menu',
+  component: NavMenu,
   tags: ['autodocs'],
-  component: Logo,
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof Logo>;
+} satisfies Meta<typeof NavMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Main: Story = {
+export const Default: Story = {
   args: {},
 };

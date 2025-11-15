@@ -1,0 +1,30 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+a.link {
+  display: block;
+  width: max-content;
+  padding: 8px 16px;
+  color: var(--color-light-100);
+  span {
+    width: 28px;
+    height: 28px;
+    background: center/cover no-repeat url('/fill-profile.svg');
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+}
+.box {
+  display: flex;
+  align-items: center;
+}
+a.search {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: center/cover no-repeat url('/search-icon.svg');
+  margin-right: 11px;
+}
