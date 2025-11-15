@@ -39,6 +39,15 @@ export const FOOTER_LINKS = [
     ],
   },
   {
+    title: 'Support',
+    links: [
+      {
+        label: 'Contact Us',
+        href: '/contact-us',
+      },
+    ],
+  },
+  {
     title: 'Subscription',
     links: [
       {
