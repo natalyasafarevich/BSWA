@@ -4,16 +4,20 @@ export const HEADER_LINKS = [
     href: '/',
   },
   {
-    label: 'Genre',
-    href: '/genre',
+    label: 'Categories',
+    href: '/categories',
   },
   {
-    label: 'Movies',
-    href: '/movies',
+    label: 'Novelty',
+    href: '/novelty',
   },
   {
-    label: 'TV Shows',
-    href: '/shows',
+    label: 'Collection',
+    href: '/collection',
+  },
+  {
+    label: 'About Us',
+    href: '/about-us',
   },
   {
     label: 'Subscriptions',
