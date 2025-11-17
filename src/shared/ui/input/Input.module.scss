@@ -18,3 +18,9 @@
   max-width: 100%;
   width: 100%;
 }
+.error {
+  position: absolute;
+  margin: 5px 0 0;
+  color: var(--color-danger-100);
+  font-size: var(--font-size-xs);
+}
