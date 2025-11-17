@@ -1,0 +1,16 @@
+.authContent {
+  border: 2px solid var(--color-dark-300);
+  border-radius: 24px;
+  display: flex;
+  align-items: stretch;
+  &__form {
+    padding: 60px 10px;
+    max-width: 50%;
+    width: 100%;
+  }
+  &__image {
+    background: center/cover no-repeat url('/test-auth-image.svg');
+    max-width: 50%;
+    width: 100%;
+  }
+}
