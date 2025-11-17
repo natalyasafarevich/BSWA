@@ -1,4 +1,6 @@
-export const FOOTER_LINKS = [
+import { FooterSectionProps } from '@/features/footer-section';
+
+export const FOOTER_LINKS: FooterSectionProps[] = [
   {
     title: 'Home',
     links: [
@@ -53,6 +55,21 @@ export const FOOTER_LINKS = [
       {
         label: 'Plans',
         href: '/subscriptions',
+      },
+    ],
+  },
+  {
+    title: 'Connect With Us',
+    links: [
+      {
+        type: 'telegram',
+        label: '',
+        href: 't.me',
+      },
+      {
+        label: '',
+        type: 'email',
+        href: 'gmail.com',
       },
     ],
   },

@@ -9,10 +9,40 @@
 .link {
   all: unset;
   display: block;
+  width: 100%;
   cursor: pointer;
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-medium);
   &:not(:last-child) {
     margin-bottom: 10px;
   }
+}
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  &_email {
+    background:
+      center/cover no-repeat url('/email-icon.svg'),
+      var(--color-dark-300);
+    margin-left: 16px;
+  }
+  &_telegram {
+    background:
+      center/cover no-repeat url('/telegram-icon.svg'),
+      var(--color-dark-300);
+  }
+  background-size: 80%;
+  &:hover {
+    background-size: 90%;
+  }
+}
+.withIcon {
+  width: max-content;
 }
