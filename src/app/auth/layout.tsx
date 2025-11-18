@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import s from './layout.module.scss';
 import { Google } from '@/features/auth/google';
+import { AuthSwitchText } from '@/features/auth-switch-text';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,6 +22,7 @@ export default function RootLayout({
             <span>OR</span>{' '}
           </p>
           <Google />
+          <AuthSwitchText />
         </div>
       </div>
       <div className={s.authContent__image}></div>
