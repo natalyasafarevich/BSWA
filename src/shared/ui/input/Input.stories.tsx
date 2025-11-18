@@ -18,6 +18,11 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: { label: 'Input Label', placeholder: 'Enter text here' },
 };
-export const fullWidth: Story = {
+
+export const WithError: Story = {
+  args: { ...Default.args, error: 'This field is required' },
+};
+
+export const FullWidth: Story = {
   args: { ...Default.args, fullWidth: true },
 };
