@@ -35,6 +35,9 @@ export const SignInForm = () => {
           <Link href={'/forgot-password'}>Forget Password?</Link>
         </Button>
       </div>
+      <Button type="submit" variant="primary" className={s.button} fullWidth>
+        Login
+      </Button>
     </form>
   );
 };
