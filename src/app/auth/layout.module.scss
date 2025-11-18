@@ -13,4 +13,30 @@
     max-width: 50%;
     width: 100%;
   }
+  &__content {
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.hr {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  span {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    background-color: var(--color-dark-700);
+  }
+  &::before {
+    content: '';
+    display: block;
+    top: 50%;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background: var(--color-dark-500);
+  }
 }

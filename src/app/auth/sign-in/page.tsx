@@ -1,9 +1,5 @@
-import { SignInForm } from '@/features/auth/sign-in';
+import { SignInPage } from '@/pages-component/sign-in';
 
 export default function SignIn() {
-  return (
-    <div>
-      <SignInForm />
-    </div>
-  );
+  return <SignInPage />;
 }

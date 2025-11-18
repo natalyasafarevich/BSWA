@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import s from './layout.module.scss';
+import { Google } from '@/features/auth/google';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +14,15 @@ export default function RootLayout({
 }>) {
   return (
     <div className={s.authContent}>
-      <div className={s.authContent__form}>{children}</div>
+      <div className={s.authContent__form}>
+        <div className={s.authContent__content}>
+          {children}{' '}
+          <p className={s.hr}>
+            <span>OR</span>{' '}
+          </p>
+          <Google />
+        </div>
+      </div>
       <div className={s.authContent__image}></div>
     </div>
   );
