@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+}
+.checkbox {
+  all: unset;
+  border: 1px solid var(--color-light-300);
+  border-radius: 5px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  color: var(--color-light-300);
+  margin-left: 8px;
+}
+
+.icon {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  position: absolute;
+  background: center/cover no-repeat url('/fi-rs-check.svg');
+}
