@@ -1,0 +1,15 @@
+button.button {
+  padding: 15px 5px;
+  border: 2px solid var(--color-dark-500);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-l);
+  border-radius: 10px;
+  span {
+    margin-right: 8px;
+    height: 28px;
+    width: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    background: center/cover no-repeat url('/google-icon.svg');
+  }
+}

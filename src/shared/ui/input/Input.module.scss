@@ -1,0 +1,26 @@
+.label {
+  font-size: var(--font-size-m);
+  display: block;
+  font-weight: var(--font-weight-regular);
+  padding: 0 16px;
+  margin-bottom: 8px;
+}
+
+.input {
+  all: unset;
+  font-size: var(--font-size-s);
+  background-color: var(--color-dark-500);
+  padding: 16px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.fullWidth {
+  max-width: 100%;
+  width: 100%;
+}
+.error {
+  position: absolute;
+  margin: 5px 0 0;
+  color: var(--color-danger-100);
+  font-size: var(--font-size-xs);
+}
