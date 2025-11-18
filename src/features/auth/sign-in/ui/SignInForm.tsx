@@ -7,6 +7,7 @@ import { signInForm } from '../lib/signInForm';
 import { Input } from '@/shared/ui/input/Input';
 import { Button } from '@/shared/ui/button/Button';
 import Link from 'next/link';
+import { Checkbox } from '@/shared/ui/checkbox/Checkbox';
 
 export const SignInForm = () => {
   const {
@@ -28,9 +29,12 @@ export const SignInForm = () => {
           />
         </div>
       ))}
-      <Button type="button" asChild>
-        <Link href={'/forgot-password'}>Forget Password?</Link>
-      </Button>
+      <div className={s.row}>
+        <Checkbox label="Remember me" id="remember-me" />
+        <Button type="button" asChild>
+          <Link href={'/forgot-password'}>Forget Password?</Link>
+        </Button>
+      </div>
     </form>
   );
 };
