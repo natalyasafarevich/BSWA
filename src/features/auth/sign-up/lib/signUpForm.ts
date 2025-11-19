@@ -23,7 +23,7 @@ export const signUpForm = [
   {
     label: 'Confirm Password',
     placeholder: 'Confirm your password',
-    register: 'confirm-password',
+    register: 'confirmPassword',
     type: 'password',
     fullWidth: true,
   },

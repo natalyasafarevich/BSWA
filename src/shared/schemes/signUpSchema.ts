@@ -1,5 +1,5 @@
 import z from 'zod';
-import { agree, confirmPassword, email, name, password } from './baseSchemes';
+import { confirmPassword, email, name, password } from './baseSchemes';
 import { passwordValidation } from '../lib/validation/consts';
 
 export const signUpSchema = z
@@ -8,7 +8,6 @@ export const signUpSchema = z
     email,
     password,
     confirmPassword,
-    agree,
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: passwordValidation.ERROR_MESSAGES.MISMATCH,
