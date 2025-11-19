@@ -16,9 +16,8 @@ export const password = z
   .max(passwordValidation.MAX_LENGTH, {
     message: `Maximum number of characters ${passwordValidation.MAX_LENGTH}`,
   })
-  .regex(passwordValidation.REGEX, { message: passwordValidation.ERROR_MESSAGES.PATTERN })
-  .default('');
+  .regex(passwordValidation.REGEX, { message: passwordValidation.ERROR_MESSAGES.PATTERN });
 
-export const confirmPassword = z.string().default('');
+export const confirmPassword = z.string();
 
-export const agree = z.boolean().default(false);
+export const agree = z.boolean();

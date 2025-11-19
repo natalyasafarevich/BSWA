@@ -1,10 +1,10 @@
 import { SignUpForm } from '@/features/auth/sign-up';
-import s from './SignUpPage.module.scss';
 
 export const SignUpPage = () => {
   return (
-    <div>
+    <>
+      <p className="auth-title">Welcome</p>
       <SignUpForm />
-    </div>
+    </>
   );
 };
