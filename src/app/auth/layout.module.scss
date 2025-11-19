@@ -7,11 +7,15 @@
     padding: 60px 10px;
     max-width: 50%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   &__image {
     background: top/cover no-repeat url('/test-auth-image.svg');
     max-width: 50%;
     width: 100%;
+    height: 800px;
   }
   &__content {
     max-width: 440px;

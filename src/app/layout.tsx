@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { StoreProvider } from './_providers/StoreProvider';
 import { Lato } from 'next/font/google';
-import './globals.css';
+import './globals.scss';
 import './_styles/ui/index.scss';
 import { TanstackProvider } from './_providers/TanstackProvider';
 import { Header } from '@/widgets/header';
