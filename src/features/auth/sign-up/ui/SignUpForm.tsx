@@ -7,6 +7,8 @@ import { signUpSchema, SignUpSchemaData } from '@/shared/schemes/signUpSchema';
 import { Button } from '@/shared/ui/button/Button';
 import { signUpWithEmail } from '@/shared/actions/signUpWithEmail';
 import s from './SignUpForm.module.scss';
+import { useEffect } from 'react';
+import { getLoggedInUser } from '@/shared/module/appwrite';
 
 export const SignUpForm = () => {
   const {
@@ -22,10 +24,15 @@ export const SignUpForm = () => {
     if (!data) return;
     try {
       await signUpWithEmail(data);
+      getLoggedInUser().then((data) => {
+        console.log(data);
+      });
     } catch (err) {
       console.error('Signup error:', err);
     }
   };
+
+  useEffect(() => {}, []);
 
   const isDisabled = !isValid;
 
