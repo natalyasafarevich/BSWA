@@ -5,7 +5,7 @@ export const useAuth = () => {
     try {
       const { account } = await createSessionClient();
       return await account.get();
-    } catch (error) {
+    } catch (error: unknown) {
       return null;
     }
   };

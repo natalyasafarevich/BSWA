@@ -1,12 +1,12 @@
 'use client';
 import { Input } from '@/shared/ui/input/Input';
 import { signUpForm } from '../lib/signUpForm';
-import s from './SignUpForm.module.scss';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { signUpSchema, SignUpSchemaData } from '@/shared/schemes/signUpSchema';
 import { Button } from '@/shared/ui/button/Button';
-import { useAuth } from '@/shared/hooks/useAuth';
+import { signUpWithEmail } from '@/shared/actions/signUpWithEmail';
+import s from './SignUpForm.module.scss';
 
 export const SignUpForm = () => {
   const {
@@ -17,14 +17,18 @@ export const SignUpForm = () => {
     resolver: zodResolver(signUpSchema),
     mode: 'onChange',
   });
-  const { signUp } = useAuth();
 
   const onSubmit = async (data: SignUpSchemaData) => {
-    if (data) {
-      const user = await signUp(data.email, data.password, data.name);
-      console.log(user);
+    if (!data) return;
+    try {
+      await signUpWithEmail(data);
+    } catch (err) {
+      console.error('Signup error:', err);
     }
   };
+
+  const isDisabled = !isValid;
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {signUpForm.map((field, i) => (
@@ -36,7 +40,7 @@ export const SignUpForm = () => {
           />
         </div>
       ))}
-      <Button variant="primary" className={s.button} fullWidth>
+      <Button variant="primary" className={s.button} fullWidth disabled={isDisabled}>
         Sign Up
       </Button>
     </form>
