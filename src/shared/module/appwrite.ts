@@ -1,12 +1,46 @@
-import { Client, Account } from 'appwrite';
+'use server';
 
-export const client = new Client();
+import { cookies } from 'next/headers';
+import { Account, Client } from 'node-appwrite';
 
-const APPWRITE_ID = process.env.APPWRITE_ID ?? '';
-const APPWRITE_URL = process.env.APPWRITE_URL ?? '';
+//SSR for client
+export async function createSessionClient() {
+  const client = new Client()
+    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
+    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!);
 
-client.setEndpoint(APPWRITE_URL).setProject(APPWRITE_ID);
+  const session = (await cookies()).get('my-custom-session');
+  if (!session || !session.value) {
+    throw new Error('No session');
+  }
 
-export const account = new Account(client);
+  client.setSession(session.value);
 
-export { ID } from 'appwrite';
+  return {
+    get account() {
+      return new Account(client);
+    },
+  };
+}
+
+//SSR for admin
+export async function createAdminClient() {
+  const client = new Client()
+    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
+    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!)
+    .setKey(process.env.NEXT_APPWRITE_KEY!);
+
+  return {
+    get account() {
+      return new Account(client);
+    },
+  };
+}
+export async function getLoggedInUser() {
+  try {
+    const { account } = await createSessionClient();
+    return await account.get();
+  } catch (error) {
+    return null;
+  }
+}
