@@ -8,18 +8,27 @@ import { Input } from '@/shared/ui/input/Input';
 import { Button } from '@/shared/ui/button/Button';
 import Link from 'next/link';
 import { Checkbox } from '@/shared/ui/checkbox/Checkbox';
+import { signWithEmail } from '@/shared/actions/signWithEmail';
 
 export const SignInForm = () => {
   const {
     register,
+    handleSubmit,
     formState: { errors, isValid },
   } = useForm<SignInSchemaData>({
     resolver: zodResolver(SignInSchema),
     mode: 'onTouched',
   });
-
+  const onSubmit = async (data: SignInSchemaData) => {
+    if (!data) return;
+    try {
+      await signWithEmail(data, false);
+    } catch (err) {
+      console.error('Signup error:', err);
+    }
+  };
   return (
-    <form className={s.form}>
+    <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
       {signInForm.map((field, i) => (
         <div key={i} className={s.box}>
           <Input

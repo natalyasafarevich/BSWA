@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { signUpSchema, SignUpSchemaData } from '@/shared/schemes/signUpSchema';
 import { Button } from '@/shared/ui/button/Button';
-import { signUpWithEmail } from '@/shared/actions/signUpWithEmail';
+import { signWithEmail } from '@/shared/actions/signWithEmail';
 import s from './SignUpForm.module.scss';
 
 export const SignUpForm = () => {
@@ -21,7 +21,7 @@ export const SignUpForm = () => {
   const onSubmit = async (data: SignUpSchemaData) => {
     if (!data) return;
     try {
-      await signUpWithEmail(data);
+      await signWithEmail(data, true);
     } catch (err) {
       console.error('Signup error:', err);
     }
