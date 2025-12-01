@@ -6,6 +6,7 @@ import './_styles/ui/index.scss';
 import { TanstackProvider } from './_providers/TanstackProvider';
 import { Header } from '@/widgets/header';
 import { Footer } from '@/widgets/footer';
+import { UserProvider } from './_providers/UserProvider';
 
 const lato = Lato({
   variable: '--font-family',
@@ -28,11 +29,13 @@ export default function RootLayout({
       <body className={`${lato.variable}`}>
         <StoreProvider>
           <TanstackProvider>
-            <div className="wrapper">
-              <Header />
-              <main className="content"> {children}</main>
-              <Footer />
-            </div>
+            <UserProvider>
+              <div className="wrapper">
+                <Header />
+                <main className="content"> {children}</main>
+                <Footer />
+              </div>
+            </UserProvider>
           </TanstackProvider>
         </StoreProvider>
       </body>

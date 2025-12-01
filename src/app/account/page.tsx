@@ -1,9 +1,9 @@
-import { UserPhoto } from '@/shared/ui/user-photo/UserPhoto';
+import { UserCard } from '@/features/account/user-card';
 
 export default function Account() {
   return (
     <>
-      <UserPhoto src="/test-user-icon.svg" alt="user-photo" />
+      <UserCard />
     </>
   );
 }
