@@ -1,4 +1,4 @@
-import { UserPhoto } from '@/features/user-photo';
+import { UserPhoto } from '@/shared/ui/user-photo/UserPhoto';
 
 export default function Account() {
   return (
