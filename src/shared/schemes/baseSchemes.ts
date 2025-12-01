@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { passwordValidation } from '../lib/validation/consts';
+import { passwordValidation, phoneRegex } from '../lib/validation/consts';
 
 export const email = z
   .string()
@@ -21,3 +21,7 @@ export const password = z
 export const confirmPassword = z.string();
 
 export const agree = z.boolean();
+
+export const nick = z.string().min(5);
+
+export const phone = z.string().regex(phoneRegex, 'Invalid Number');

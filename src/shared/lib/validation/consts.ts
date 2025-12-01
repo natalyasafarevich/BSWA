@@ -9,3 +9,5 @@ export const passwordValidation = {
     MISMATCH: 'The passwords must match',
   },
 } as const;
+
+export const phoneRegex = new RegExp(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/);
