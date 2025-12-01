@@ -1,0 +1,15 @@
+.image {
+  border-radius: 50%;
+  &_l {
+    width: 285px;
+    height: 300px;
+  }
+  &_m {
+    width: 100px;
+    height: 100px;
+  }
+  &_s {
+    width: 52px;
+    height: 52px;
+  }
+}
