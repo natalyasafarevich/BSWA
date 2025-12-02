@@ -8,6 +8,7 @@ import Link from 'next/link';
 
 import { userForm } from '../lib/userForm';
 import { userSettingSchemes, UserSettingsSchemaData } from '@/shared/schemes/userSettingSchemes';
+import { Genres } from '@/entities/genres';
 
 export const UserForm = () => {
   const {
@@ -32,7 +33,7 @@ export const UserForm = () => {
           />
         </div>
       ))}
-
+      <Genres />
       <Button type="submit" variant="primary" className={s.button} fullWidth>
         Save
       </Button>
