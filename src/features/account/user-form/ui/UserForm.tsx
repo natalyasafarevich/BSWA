@@ -14,11 +14,15 @@ export const UserForm = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isValid },
   } = useForm<UserSettingsSchemaData>({
     resolver: zodResolver(userSettingSchemes),
     mode: 'onTouched',
   });
+
+  console.log(errors);
+
   const onSubmit = async (data: UserSettingsSchemaData) => {
     if (!data) return;
   };
@@ -33,7 +37,7 @@ export const UserForm = () => {
           />
         </div>
       ))}
-      <Genres />
+      <Genres control={control} error={errors.genres?.message} />
       <Button type="submit" variant="primary" className={s.button} fullWidth>
         Save
       </Button>

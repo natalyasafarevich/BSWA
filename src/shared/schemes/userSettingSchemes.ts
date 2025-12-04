@@ -6,6 +6,7 @@ export const userSettingSchemes = z.object({
   email,
   nick,
   phone,
+  genres: z.array(z.string()).min(1, 'Select at least one genre'),
 });
 
 export type UserSettingsSchemaData = z.infer<typeof userSettingSchemes>;

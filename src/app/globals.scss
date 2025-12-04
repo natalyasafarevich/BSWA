@@ -22,3 +22,9 @@ body {
     color: var(--color-light-300);
   }
 }
+
+.error {
+  margin: 5px 0 0;
+  color: var(--color-danger-100);
+  font-size: var(--font-size-xs);
+}
