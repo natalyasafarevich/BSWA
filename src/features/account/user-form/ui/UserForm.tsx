@@ -4,39 +4,56 @@ import { useForm } from 'react-hook-form';
 import s from './UserForm.module.scss';
 import { Input } from '@/shared/ui/input/Input';
 import { Button } from '@/shared/ui/button/Button';
-import Link from 'next/link';
-
 import { userForm } from '../lib/userForm';
 import { userSettingSchemes, UserSettingsSchemaData } from '@/shared/schemes/userSettingSchemes';
 import { Genres } from '@/entities/genres';
+import { useAppSelector } from '@/shared/hooks/useAppSelector';
+import { selectInitialData } from '@/shared/slices/user/user-slice';
+import { useEffect, useMemo } from 'react';
+import { generateUniqNick } from '@/shared/lib/generate-nick/generate-nick';
 
 export const UserForm = () => {
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors, isValid },
+    reset,
+    formState: { errors },
   } = useForm<UserSettingsSchemaData>({
     resolver: zodResolver(userSettingSchemes),
     mode: 'onTouched',
   });
 
-  console.log(errors);
+  const user = useAppSelector(selectInitialData);
+
+  const nick = useMemo(() => {
+    return generateUniqNick();
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      reset({ ...user, nick });
+    }
+  }, [user]);
 
   const onSubmit = async (data: UserSettingsSchemaData) => {
     if (!data) return;
   };
+
   return (
     <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-      {userForm.map((field, i) => (
-        <div key={i} className={s.box}>
-          <Input
-            {...field}
-            {...register(field.register as keyof UserSettingsSchemaData)}
-            error={errors[field.register as keyof UserSettingsSchemaData]?.message}
-          />
-        </div>
-      ))}
+      <div className={s.fields}>
+        {userForm.map((field, i) => (
+          <div key={i} className={s.box}>
+            <Input
+              readOnly={field.register == 'email'}
+              {...field}
+              {...register(field.register as keyof UserSettingsSchemaData)}
+              error={errors[field.register as keyof UserSettingsSchemaData]?.message}
+            />
+          </div>
+        ))}
+      </div>
       <Genres control={control} error={errors.genres?.message} />
       <Button type="submit" variant="primary" className={s.button} fullWidth>
         Save

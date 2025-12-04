@@ -1,11 +1,5 @@
-import { UserCard } from '@/features/account/user-card';
-import { UserForm } from '@/features/account/user-form';
+import { AccountSettings } from '@/pages-component/user';
 
 export default function Account() {
-  return (
-    <>
-      <UserCard />
-      <UserForm />
-    </>
-  );
+  return <AccountSettings />;
 }

@@ -22,6 +22,6 @@ export const confirmPassword = z.string();
 
 export const agree = z.boolean();
 
-export const nick = z.string().min(5);
+export const nick = z.string().min(5, 'Nick should to have nim 5 characters');
 
-export const phone = z.string().regex(phoneRegex, 'Invalid Number');
+export const phone = z.string().regex(phoneRegex, 'Invalid Number').optional().or(z.literal(''));
