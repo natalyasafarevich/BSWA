@@ -12,6 +12,7 @@ import { selectInitialData } from '@/shared/slices/user/user-slice';
 import { useEffect, useMemo } from 'react';
 import { generateUniqNick } from '@/shared/lib/generate-nick/generate-nick';
 import { updateUser } from '@/app/actions/update-user';
+import { toast, ToastContainer } from 'react-toastify';
 
 export const UserForm = () => {
   const {
@@ -44,8 +45,8 @@ export const UserForm = () => {
     // if(data.phone){
 
     // }
-    const res = await updateUser({ ...data, userId: user.$id });
-    console.log('Результат обновления:', res);
+    const result = await updateUser({ ...data, userId: user.$id });
+    result.map((item) => item.reason && toast.error(item.reason.message));
   };
 
   return (
@@ -66,6 +67,7 @@ export const UserForm = () => {
       <Button type="submit" variant="primary" className={s.button} fullWidth>
         Save
       </Button>
+      <ToastContainer />
     </form>
   );
 };

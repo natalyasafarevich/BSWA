@@ -21,5 +21,7 @@ export async function updateUser(data: UpdateProps) {
 
   const results = await Promise.allSettled(promises);
 
-  return results.map((r) => r.status !== 'fulfilled' && { status: 'error', reason: r.reason });
+  return results.map((r) =>
+    r.status == 'fulfilled' ? { status: 'ok' } : { status: 'error', reason: r.reason },
+  );
 }
