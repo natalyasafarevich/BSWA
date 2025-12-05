@@ -1,0 +1,66 @@
+.overlay {
+  background-color: #1f1f1fa3;
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content {
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 20px -1px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  position: fixed;
+  border: 2px solid var(--color-dark-300);
+  color: var(--color-light-100);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 500px;
+  max-height: 85vh;
+  padding: 15px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  background: #d2d2d20d;
+  &:focus {
+    outline: none;
+  }
+}
+
+.title {
+  font-size: var(--font-size-l);
+}
+
+.close {
+  all: unset;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+
+  cursor: pointer;
+
+  width: 24px;
+  height: 24px;
+  &:hover {
+    background-color: var(--color-light-900);
+    transition: 10ms ease-in-out;
+  }
+}
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
