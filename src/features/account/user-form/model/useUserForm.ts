@@ -29,7 +29,7 @@ export const useUserForm = () => {
 
   const onSubmit = (data: UserSettingsSchemaData & { password?: string }) => {
     data = { ...data, password };
-    if (data.phone && !data.password) {
+    if (data.phone !== user.phone && !data.password) {
       setIsOpen(true);
       return;
     }
