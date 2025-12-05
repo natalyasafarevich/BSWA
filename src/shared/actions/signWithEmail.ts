@@ -1,7 +1,5 @@
-'use server';
-
 import { ID } from 'node-appwrite';
-import { createAdminClient, createSessionClient } from '../module/appwrite';
+import { createAdminClient, createSessionClient } from '../module/appwrite-ssr';
 import { cookies } from 'next/headers';
 
 type FormData = { email: string; password: string; name?: string };

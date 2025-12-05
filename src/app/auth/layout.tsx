@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import s from './layout.module.scss';
 import { Google } from '@/features/auth/google';
 import { AuthSwitchText } from '@/features/auth-switch-text';
-import { getLoggedInUser } from '@/shared/module/appwrite';
+import { getLoggedInUser } from '@/shared/module/appwrite-ssr';
 import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {

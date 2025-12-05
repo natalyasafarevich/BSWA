@@ -1,6 +1,6 @@
 'use client';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { getLoggedInUser } from '@/shared/module/appwrite';
+import { getLoggedInUser } from '@/shared/module/appwrite-ssr';
 import { setInitialUserData } from '@/shared/slices/user/user-slice';
 import { User } from '@/shared/types/user/UserType';
 import { PropsWithChildren, useEffect } from 'react';

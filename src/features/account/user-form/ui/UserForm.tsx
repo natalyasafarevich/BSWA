@@ -11,6 +11,7 @@ import { useAppSelector } from '@/shared/hooks/useAppSelector';
 import { selectInitialData } from '@/shared/slices/user/user-slice';
 import { useEffect, useMemo } from 'react';
 import { generateUniqNick } from '@/shared/lib/generate-nick/generate-nick';
+import { updateUser } from '@/app/actions/update-user';
 
 export const UserForm = () => {
   const {
@@ -38,6 +39,13 @@ export const UserForm = () => {
 
   const onSubmit = async (data: UserSettingsSchemaData) => {
     if (!data) return;
+    const password: null | string = null;
+
+    // if(data.phone){
+
+    // }
+    const res = await updateUser({ ...data, userId: user.$id });
+    console.log('Результат обновления:', res);
   };
 
   return (
